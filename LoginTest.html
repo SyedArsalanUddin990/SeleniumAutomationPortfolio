@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 100px; background-color: #f4f4f4; }
+        .login-container { background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); width: 300px; margin: auto; }
+        input, button { width: 90%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #ccc; }
+        button { background-color: #007bff; color: white; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+        #logout { background-color: #dc3545; }
+    </style>
+</head>
+<body>
+<div class="login-container" id="loginSection">
+    <h2>Login</h2>
+    <form id="loginForm">
+        <input type="text" id="username" placeholder="Enter Username" required>
+        <input type="password" id="password" placeholder="Enter Password" required>
+        <button type="button" id="login">Login</button>
+    </form>
+</div>
+
+<div class="login-container" id="logoutSection" style="display: none;">
+    <h2>Welcome, User!</h2>
+    <button id="logout">Logout</button>
+</div>
+
+<script>
+    document.getElementById("login").addEventListener("click", function() {
+        document.getElementById("loginSection").style.display = "none";
+        document.getElementById("logoutSection").style.display = "block";
+    });
+
+    document.getElementById("logout").addEventListener("click", function() {
+        document.getElementById("logoutSection").style.display = "none";
+        document.getElementById("loginSection").style.display = "block";
+    });
+</script>
+
+</body>
+</html>
